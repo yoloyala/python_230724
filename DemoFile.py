@@ -1,4 +1,9 @@
 # DemoFile.py
+
+# read() : str
+# readline() : 100MB
+# readlines() : ~ 1GB    list 형식
+
 for i in range(0,10):
     url = "http://www.credu.com/?page=" + str(i)
     print(url)
