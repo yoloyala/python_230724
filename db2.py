@@ -1,8 +1,8 @@
 # db1.py
 import sqlite3
-#con = sqlite3.connect("c:\\work\\test.db")
+
 # 연결객체 생성(일단은 메모리에서 연습)
-con = sqlite3.connect(":memory:")
+con = sqlite3.connect("c:\\work\\sample.db")
 # 커서 객체
 cur = con.cursor()
 #테이블 구조 생성
@@ -26,12 +26,11 @@ cur.executemany("insert into PhoneBook (name, phoneNum) values " +
 # 검색구문          # loop를 돌리거나 list 변수에 넣어두면 문제는 안됨
 # 아래와 같이 코딩을 하면 하나 읽고 읽은 데이터는 날라감
 cur.execute("select * from PhoneBook;")
-print("---fetchone()---")
-print(cur.fetchone())
-print("---fetchmany(2)---")
-print(cur.fetchmany(2))
+
 print("---fetchall()---")
 print(cur.fetchall())
+# 작업완료
+con.commit()
 
 # 검색구문
 # cur.execute("select * from PhoneBook;")
